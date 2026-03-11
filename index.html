@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/src/styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neuro-sama Widget</title>
+    <script type="module" src="/src/main.ts" defer></script>
+  </head>
+
+  <body>
+    <div class="neuro-widget">
+      <!-- 캐릭터 영역 -->
+      <div id="character" class="character">
+        <svg class="character-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <!-- 얼굴 -->
+          <circle cx="100" cy="100" r="80" fill="#FFE4C4" stroke="#FFB6C1" stroke-width="3"/>
+
+          <!-- 머리카락 -->
+          <ellipse cx="100" cy="50" rx="70" ry="40" fill="#FF69B4"/>
+          <circle cx="45" cy="60" r="20" fill="#FF69B4"/>
+          <circle cx="155" cy="60" r="20" fill="#FF69B4"/>
+
+          <!-- 눈 -->
+          <ellipse cx="70" cy="90" rx="15" ry="20" fill="white"/>
+          <ellipse cx="130" cy="90" rx="15" ry="20" fill="white"/>
+          <circle cx="72" cy="92" r="10" fill="#4A4A4A"/>
+          <circle cx="132" cy="92" r="10" fill="#4A4A4A"/>
+          <circle cx="75" cy="88" r="3" fill="white"/>
+          <circle cx="135" cy="88" r="3" fill="white"/>
+
+          <!-- 볼 터치 -->
+          <circle cx="50" cy="115" r="10" fill="#FFB6C1" opacity="0.6"/>
+          <circle cx="150" cy="115" r="10" fill="#FFB6C1" opacity="0.6"/>
+
+          <!-- 입 -->
+          <path d="M 85 130 Q 100 145 115 130" stroke="#FF6B9D" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+          <!-- 블러시 (머리 장식) -->
+          <circle cx="80" cy="30" r="12" fill="#FF1493"/>
+          <circle cx="100" cy="25" r="15" fill="#FF69B4"/>
+          <circle cx="120" cy="30" r="12" fill="#FF1493"/>
+        </svg>
+      </div>
+
+      <!-- 말풍선 -->
+      <div id="speech-bubble" class="speech-bubble">
+        <span class="bubble-text"></span>
+      </div>
+
+      <!-- 채팅 입력 영역 -->
+      <div class="chat-area">
+        <textarea
+          id="chat-input"
+          placeholder="메시지를 입력하세요..."
+          rows="2"
+        ></textarea>
+        <button id="send-button" type="button">전송</button>
+      </div>
+    </div>
+
+    <!-- API 키 설정 모달 -->
+    <div id="api-key-modal" class="modal">
+      <div class="modal-content">
+        <h2>API 키 설정</h2>
+        <p>GLM-5 API 키를 입력해주세요.</p>
+        <input
+          id="api-key-input"
+          type="password"
+          placeholder="sk-..."
+        />
+        <div class="modal-buttons">
+          <button id="save-api-key" class="primary">저장</button>
+        </div>
+        <p class="hint">API 키는 Alibaba Coding Plan에서 발급받을 수 있습니다.</p>
+      </div>
+    </div>
+  </body>
+</html>
